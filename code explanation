@@ -1,0 +1,37 @@
+The provided code is a Python script for movie recommendation based on user input. Here's a step-by-step explanation of what the code does:
+
+1. Imports the necessary libraries:
+   - `numpy` and `pandas`: For numerical and data manipulation operations.
+   - `difflib`: For finding the closest match to the user's movie input.
+   - `TfidfVectorizer` from `sklearn.feature_extraction.text`: To convert text data into feature vectors using TF-IDF.
+   - `cosine_similarity` from `sklearn.metrics.pairwise`: To calculate the cosine similarity between feature vectors.
+
+2. Loads the movie data from a CSV file named 'movies.csv' into a pandas DataFrame called `movies_data`.
+
+3. Prints the first 5 rows of the DataFrame to inspect the data.
+
+4. Gets the number of rows and columns in the DataFrame using `shape`.
+
+5. Selects the relevant features for movie recommendation, which include 'genres', 'keywords', 'tagline', 'cast', and 'director'.
+
+6. Replaces any null values in the selected features with an empty string.
+
+7. Combines all the selected features into a single string for each movie.
+
+8. Converts the combined text data into feature vectors using TF-IDF Vectorizer.
+
+9. Calculates the cosine similarity matrix of the feature vectors to measure similarity between movies.
+
+10. Asks the user to input their favorite movie name.
+
+11. Finds the closest match to the movie name given by the user among the movie titles available in the dataset.
+
+12. Retrieves the index of the movie with the closest match to the user's input.
+
+13. Calculates the similarity scores between the user's selected movie and all other movies based on the index.
+
+14. Sorts the movies based on their similarity scores in descending order.
+
+15. Prints the names of similar movies to the user, suggesting up to 30 similar movies.
+
+The script uses TF-IDF and cosine similarity to recommend movies similar to the one provided by the user. It helps users discover movies that share similar characteristics based on genre, keywords, tagline, cast, and director.
